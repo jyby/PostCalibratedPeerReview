@@ -1,0 +1,170 @@
+\documentclass[usletter]{llncs}
+\usepackage{makeidx}  % allows for indexgeneration
+
+\usepackage[T1]{fontenc}
+\usepackage{times} % Specify font, especially when using ps2pdf after.
+\usepackage{pifont}
+\usepackage{epsfig}
+\usepackage{algorithmic}%% For the Algorithms.
+\usepackage{algorithm} %% For the floating Algorithm environment.
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage[sort]{natbib} % To have the references sorted in good order.
+
+\usepackage{fullpage}
+
+\usepackage{versions}
+\excludeversion{INUTILE}
+\excludeversion{LONG}
+\markversion{TODO}
+
+
+% Do away with "club lines" (the first line of a paragraph on the last line of a page; also called "orphan lines") 
+% and "widow lines" (the last line of the paragraph on a new page): 
+\widowpenalty=10000   
+\clubpenalty=10000
+\flushbottom
+
+% Always aknowledge sources and pointers and proof readers
+\newenvironment{acknowledgments}{\vspace{.4cm}{\noindent \em Acknowledgements:}}{}%
+
+\begin{document}
+
+\pagestyle{headings}  % switches on printing of running heads
+\addtocmark{        Post Calibrated Peer Review            }
+
+\mainmatter              % start of the contributions
+\title{             Post Calibrated Peer Review: \\ Definition, Theory and Experiments            }
+\titlerunning{      Post Calibrated Peer Review            } 
+%
+\author{J\'er\'emy Barbay}
+\authorrunning{J\'er\'emy Barbay}   % abbreviated author list (for running head)
+%
+%%%% modified list of authors for the TOC (add the affiliations)
+\tocauthor{J\'er\'emy Barbay (Universidad de Chile)}
+%
+\institute{
+%
+  Departmento de Ciencias de la Computaci{\'o}n, \\
+  University of Chile, \\
+\email{jeremy@barbay.cl}
+}
+
+\maketitle              % typeset the title of the contribution
+
+\begin{abstract}
+Peer Review is an essential tool in the validation and publication of scientific knowledge, which has come under increasing criticism under the load of an ever-increasing scientific community.  Calibrated Peer Review is a pedagogical technique where students evaluate a mix of student essays and calibration essays written by an instructor, aliviating the correction load of the instructor at the same time as it develops the critical skills of students. We propose an extension of the later, Post Calibrated Peer Review, as a scalable solution to prefilter both course and Peer Review submissions, with the objective to reduce the workload of both instructors and program committee members. We describe the theoretical problems introduced by Post Calibrated Peer Review, some theoretical solution to those problems, and some experimental results of a basic implementation in two courses, one undergraduate course where students create and evaluate pedagogical animations in 3D, and one graduate course where students write and evaluate research essays.
+\end{abstract}
+
+\begin{center}
+  \begin{minipage}{.9\textwidth}
+    \noindent{\bf Keywords:}
+Calibrated Peer Review,
+Collective Quality Control,
+Human Computing,
+Peer Review,
+ReCaptcha,
+Teaching via Learning.
+  \end{minipage}
+\end{center}
+
+
+
+\section{Introduction}
+%
+%\subsection{Context}
+%% Peer Review
+\textsc{Peer Review} is an essential tool in the validation and publication of scientific knowledge, which has come under increasing criticism under the load of an ever-increasing scientific community.  
+\begin{TODO}
+ADD references about criticism of Peer Review
+\end{TODO}
+
+% \subsection{Previous works}
+%% Calibrated Peer Review
+\textsc{Calibrated Peer Review} is a pedagogical technique where students evaluate a mix of student essays and calibration essays written by an instructor, aliviating the correction load of the instructor at the same time as it develops the critical skills of students. 
+
+\begin{TODO}
+ADD References about Calibrated Peer Review
+\end{TODO}
+
+Albeit \textsc{Calibrated Peer Review} scales much better than traditional \textsc{Peer Review} (the more submissions, the more reviewers), it does not seem adequate for the taks of reviewing scientific articles submitted to a conference or to a journal, and even less to review funding proposals. On one hand, the competition between participants to both makes it all the more necessary to ensure a proper quality control of the reviews being submitted. On the other hand, such a quality control implies to require participants to review submissions which are known to be correct, and submissions which are known to be incorrect, which could be perceived as a lack of respect for the time of the participants.
+
+%\subsection{Contributions}
+\textbf{Our Contribution:}
+%
+We propose the notion of \textsc{Post Calibrated Peer Review} as a variant of \textsc{Calibrated Peer Review} where the calibration occurs \emph{after} the collaborative evaluation of submissions by participants, and argue that this yields a more scalable solution than traditional \textsc{Peer Review} or \textsc{Calibrated Peer Review} (in Section~\ref{sec:pcpr}).
+%
+This notion suggests various theoretical problems on graphs, which we formally describe and solve (sometimes optimally, sometimes via heuristics) in Section~\ref{sec:TheoreticalProblems}.
+%
+Albeit it is too early to test such a system in the context of a scientific conference, we describe in Section \ref{sec:experimentations} the plans to implement and test it in the context of two courses, one undergraduate course where students create and evaluate pedagogical animations in 3D (Section~\ref{sec:pedag-anim}), and one graduate course where students write and evaluate research essays (Section~\ref{sec:research-essays}).
+
+
+\section{Post Calibrated Peer Review}
+\label{sec:pcpr}
+
+\section{Theoretical Problems}
+\label{sec:TheoreticalProblems}
+
+\section{Experimentations}
+\label{sec:experimentations}
+
+
+\subsection{Pedagogical Animations (Undergraduate)}
+\label{sec:pedag-anim}
+\subsection{Research Essays (Graduate)}
+\label{sec:research-essays}
+
+\section{Discussion}
+\label{sec:discussion}
+
+
+\medskip 
+\textbf{Acknowledgments:} The authors would like to thank 
+%
+Ahn Hiep Han and Alonso Silva for interesting discussions on the theoretical problems (and solutions) underlying the notion of \textsc{Post Calibrated Peer Review}; and
+%
+Jorge Ampuero for implementing some early prototype during his Master thesis.
+% 
+\textbf{Funding:} J\'er\'emy Barbay is partially funded by 
+the project Fondecyt Regular no 1170366 from Conicyt.
+%the Millennium Nucleus RC130003 ``Information and Coordination in Networks''.
+%
+% \textbf{Author Contributions:} 
+%
+\textbf{Competing Interests:} The authors declare that they have no competing financial interests relevant to the material exposed in this article.
+%
+\textbf{Data and Material Availability:}
+%
+The data used and produced by the experiments is publically available on the github project corresponding to this work, \url{https://github.com/jyby/PostCalibratedPeerReview}
+
+%%%%%%%%  BIBLIO  %%%%%%%%%%%%
+%\newpage
+\bibliographystyle{apalike} % see https://www.sharelatex.com/learn/Bibtex_bibliography_styles to choose your bibliography style
+\bibliography{/home/jbarbay/EverGoing/Bibliography/bibliographyDatabaseJeremyBarbay,/home/jbarbay/EverGoing/Publications/publications-ExportedFromOrgmode-Barbay}
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
